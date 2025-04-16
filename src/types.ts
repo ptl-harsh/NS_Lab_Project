@@ -3,6 +3,8 @@ export interface User {
   name: string;
   role: 'admin' | 'user' | 'guest';
   department: string;
+  email: string;
+  isEmailVerified: boolean;
 }
 
 export interface Device {
@@ -28,5 +30,6 @@ export interface SecurityPolicy {
   requirements: {
     complianceRequired: boolean;
     allowedDepartments: string[];
+    allowedHours?: [number, number]; // Optional time window [startHour, endHour]
   };
 }
